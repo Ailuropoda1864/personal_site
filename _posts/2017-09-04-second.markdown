@@ -1,0 +1,20 @@
+---
+layout: post
+category: Blog
+title: Second blog post
+description: please put something interesting here
+---
+
+Now we are reaching the stage where real work must begin.
+I write these posts as filler in order to see what the web page will look like when Fei does the real work.
+Of course, I have to put enough jibberish in here to take up enough space.
+
+Now let's have another paragraph.
+What's on your mind?
+I've got nothing.
+Well, there are some pretty nice panda banners strewn about this site.
+Yes, I wonder who took those?
+Pandas are very photogenic.
+
+That's all for this week's filler, folks.
+Come back next week, when all this crap is gone and Fei has put real blog posts here.

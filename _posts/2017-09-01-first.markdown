@@ -1,0 +1,22 @@
+---
+layout: post
+category: Blog
+title: First blog post
+description: random gibberish
+---
+Each restrained scenario slides over the buss.
+Any climate finishes inside the finger.
+The taste shoes the lifetime into the decimal unfortunate.
+The salary reverts before the triangle.
+
+- One
+- Two
+- Three
+- Four
+
+Here is some code that is not highlighted correctly :(
+
+{% highlight python %}
+def foo():
+    return 'bar'
+{% endhighlight %}

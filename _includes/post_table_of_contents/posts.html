@@ -1,0 +1,17 @@
+<section id="posts">
+    {% for post in site.posts %}
+    {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+        <div class="content-section-a">
+            {% include post_table_of_contents/post_excerpt.html %}
+        </div>
+
+        {% else %}
+
+        <div class="content-section-b">
+            {% include post_table_of_contents/post_excerpt.html %}
+        </div>
+
+        {% endif %}
+    {% endfor %}
+</section>

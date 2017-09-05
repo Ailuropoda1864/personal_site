@@ -1,0 +1,29 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: http://Ailuropoda1864.github.io/portfolio
+title: Jingfei Cai Portfolio
+email: faychoy@gmail.com
+author: Jingfei Cai
+description: Data science projects and musings by Jingfei Cai
+copyright: 'Copyright &copy; 2017 Jingfei Cai. All Rights Reserved.'
+credits: 'Credits: Landing Page is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com/">Start Bootstrap</a>.'
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: github
+    url: https://github.com/Ailuropoda1864
+  - title: linkedin
+    url: https://www.linkedin.com/in/jingfei-cai-b06b7548
