@@ -11,7 +11,7 @@
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
                         {% if service.link %}
-                        <h2 class="section-heading"><a href="{{ site.url }}/{{ service.id }}">{{ service.title }}</a></h2>
+                        <h2 class="section-heading"><a href="{{ service.id }}/">{{ service.title }}</a></h2>
                         {% else %}
                         <h2 class="section-heading">{{ service.title }}</h2>
                         {% endif %}
@@ -42,7 +42,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     {% if service.link %}
-                    <h2 class="section-heading"><a href="{{ site.url }}/{{ service.id }}">{{ service.title }}</a></h2>
+                    <h2 class="section-heading"><a href="{{ service.id }}/">{{ service.title }}</a></h2>
                     {% else %}
                     <h2 class="section-heading">{{ service.title }}</h2>
                     {% endif %}
