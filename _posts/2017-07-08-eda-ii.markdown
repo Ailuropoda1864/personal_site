@@ -5,7 +5,7 @@ title: Exploratory Data Analysis (II)
 description: Exploratory data analysis (EDA) -- checking for missing and duplicate data
 ---
 
-In my [last blog post]({% link _posts/2017-07-01-eda-i.markdown %}), I have discussed the importance of exploratory data analysis (EDA) and the use of the `describe` method in pandas. Today I'll discuss another aspect of EDA: checking for missing and duplicated data.
+In my [last blog post]({{ site.baseurl }}{% link _posts/2017-07-01-eda-i.markdown %}), I have discussed the importance of exploratory data analysis (EDA) and the use of the `describe` method in pandas. Today I'll discuss another aspect of EDA: checking for missing and duplicated data.
 
 ### Check for missing data
 Missing data directly affects what you need to do in the downstream step &mdash; data cleaning, therefore checking for missing data should be a routine during EDA.
