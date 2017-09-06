@@ -1,0 +1,22 @@
+---
+layout: post
+category: Blog
+title: Exploratory Data Analysis (III)
+description: Exploratory data analysis (EDA) -- distributions of categorical data, visual inspection of raw data
+---
+In the [first blog]({{ site.baseurl }}{% link _posts/2017-07-01-eda-i.markdown %}) of this series, I've talked about how to use the `describe` method in pandas to get a sense of the distributions of the data.
+While `describe` gives a pretty comprehensive summary on numeric data, the same thing cannot be said about categorical data.
+For this purpose, the [`value_counts` method for the Series class](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.value_counts.html#pandas-series-value-counts) is quite handy.
+I've written a wrapper function for it for easier control:
+
+<script src="https://gist.github.com/Ailuropoda1864/46761b8f20669afa4871942ee444220a.js"></script>
+
+Here is what it looks like when used on the same DataFrame used in the [first blog]({{ site.baseurl }}{% link _posts/2017-07-01-eda-i.markdown %}) of the series:
+
+![Example output from the category_counts function](category_counts.png)
+
+As a side note, checking value counts is especially important when you are dealing with a classification problem.
+Remember to check the value counts of the outcome variable, as well as the ratio (`y.value_counts() / len(y)` will do; or `y.value_counts() / float(len(y))` if you're still using Python 2 &mdash; but seriously, switch to Python 3 already!).
+This way, you'll know if you're dealing with unbalanced classes, and the baseline of your accuracy score.
+
+That's it for today. I'll wrap up the EDA series in my next blog post.
