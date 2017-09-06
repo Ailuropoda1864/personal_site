@@ -1,0 +1,36 @@
+---
+layout: post
+category: Blog
+title: Exploratory Data Analysis (I)
+description: Customized use of the describe() method in pandas for efficient exploratory data analysis (EDA)
+---
+Exploratory data analysis (EDA) is a crucial part of data science, during which we look at the size of the dataset and the variables within, the distributions of the variables, and the relationships between these variables.
+We also want to identify missing data and outliers.
+The EDA step informs us on where a project should go next:
+
+- Are the current features enough or should I engineer additional features?
+- Which features should I use in my models?
+- Which models should I select?
+
+And so on.
+
+
+In a series of blogs, I will describe the EDA I regularly perform on data science projects.
+
+
+For this blog, I will talk about the `describe` method in pandas, which is really useful when it comes to get a lay of the land.
+Both the [DataFrame class](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.describe.html#pandas.DataFrame.describe){:target="_blank"} and the [Series class](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.describe.html){:target="_blank"} have a `describe` method. I will focus on the former, especially when the DataFrame contains mixed `dtypes`.
+
+When no argument is specified and the DataFrame contains numeric data, `df.describe()` gives you the `count`, `mean`, `std`, `min`, `max` as well as 25, 50 and 75 percentiles on the __numeric columns__ (non-numeric columns, even if present, are not summerized).
+When you have a DataFrame with mixed data types, and you want to see summaries on every column, `df.describe(include='all')` includes a union of attributes (`count`, `unique`, `top`, and `freq`, in addition to the abovementioned attributes; as well as `first` and `last` items if there are timestamps). I find neither of these satisfactory. The former does not provide summary on every column, and what the latter returns is too busy and has too many  `NaN`.
+
+![Example output from the describe method](describe.png)
+
+To this end, I have written the following function to summarize each column in the DataFrame according to its `dtype`.
+<script src="https://gist.github.com/Ailuropoda1864/45c14c79551220d959b1a6b210f7e7f5.js"></script>
+
+Here is what it looks like when used on the same DataFrame in the example above:
+
+![Example output using my customized describe function](describe_by_type.png)
+
+I hope you find the code useful!

@@ -1,7 +1,7 @@
 <section id="projects">
     {% for repo in page.github %}
     {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-        {% if thecycle == 'odd' %}
+        {% if thecycle == 'even' %}
         <div class="content-section-a">
             <div class="container">
                 <div class="row">
@@ -12,7 +12,9 @@
                         <div id="{{ repo.name }}-description" class="lead"></div>
                     </div>
                     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="{{ repo.image }}" alt="">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{{ repo.image }}" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -30,7 +32,9 @@
                         <div id="{{ repo.name }}-description" class="lead"></div>
                     </div>
                     <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                      <img class="img-responsive" src="{{ repo.image }}" alt="">
+                          <div class="img-container">
+                              <img class="img-responsive" src="{{ repo.image }}" alt="">
+                          </div>
                     </div>
                 </div>
             </div>
