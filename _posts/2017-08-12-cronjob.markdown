@@ -1,0 +1,82 @@
+---
+layout: post
+category: Blog
+title: Scheduling Repetitive Tasks Using Crontab
+description: step-by-step guide to set up a cronjob to run a python script
+---
+As your data science tasks become more and more sophisticated, you may find yourself having to run scripts repeatedly at fixed intervals.
+For example, some projects require webscraping, or, as I described in a [previous blog post]({{ site.baseurl }}{% link _posts/2017-08-05-automate-git-pull.markdown %}), checking GitHub repos for updates.
+[Cron](https://en.wikipedia.org/wiki/Cron){:target="_blank"} is perfect for such purpose.
+I'll describe below how to use `crontab` in UNIX systems to schedule for a Python script to run periodically at fixed times.
+
+#### Step 1
+Set up a Python script as [described previously]({{ site.baseurl }}{% link _posts/2017-08-05-automate-git-pull.markdown %}).
+Make sure you include a `main()` function and use the conditional statement
+
+`if __name__ == '__main__'`
+
+to call it.
+
+#### Step 2
+Add [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)){:target="_blank"} to the top of the Python script (the first line).
+This line tells the UNIX system which interpreter program should be used to run the script.
+In our case, it would be the system python or python in a virtual environment.
+
+For example, I want to run my script with the python interpreter in a virtual environment called `py36`, which was created using `conda`.
+So my shebang line is:
+
+`#!/home/fay/anaconda2/envs/py36/bin/python`
+
+
+Note: Read more about managing virtual enviroments with `conda` [here](https://conda.io/docs/user-guide/tasks/manage-environments.html#managing-environments){:target="_blank"}.
+
+
+If you just want to use the system python, you can find out where it is by typing `which python` in a terminal:
+
+![Example output from running which python](which_python.png)
+
+#### Step 3
+To run the script with `crontab`, you have to first change the permission of the script.
+In a terminal, enter
+
+`chmod +x <path to .py>`
+
+Be sure to replace `<path to .py>` with the actual path to your Python script.
+This command line makes the script executable. It doesn't give any output, but if there is no error message, the permission should have been changed successfully.
+
+Note: You can check the permission to a file by running this command line in a terminal:
+
+`ls -l <path to file>`
+
+Check it before and after you run `chmod`, and you can see for yourself if the permission has been changed.
+
+#### Step 4
+Finally, you're ready to set up a cronjob!
+In a terminal, enter:
+
+`crontab -e`
+
+You'll see something like below, which is the nano editor interface. Here is where you edit your cronjobs.
+
+![crontab interface](crontab.png)
+
+As you can see near the bottom of the screen, I already have two cronjobs set up in my system.
+I'll explain what it is going on using
+
+`30 8 * * 2,4,6 cd /home/fay/code/data_science_general; ./auto_git_pull.py >> cron_git_log.txt 2>&1`
+
+as an example.
+
+The first 5 values (seperated by space) specify the time to run the commands, which is already described in the commented-out lines near the top of the screen. Note that I use `2,4,6` for day of week (dow), meaning that I want to run the commands every Tuesday, Thursday, and Saturday.
+
+The 6th value is the command to run.
+Use `;` as if you would press 'enter' in a terminal.
+In my example command, I first change the directory to where my script is (`cd /home/fay/code/data_science_general`).
+Then I call the script (`./auto_git_pull.py`). Finally, with `>> cron_git_log.txt 2>&1`, I redirect any output or error message to a log file named `cron_git_log.txt`. It is generally a good practice to keep a log for debugging purpose.
+
+#### Step 5
+After you edit crontab, press `Control` + `X` to exit the nano editor. You will be asked if you want to save the changes.
+Anytime you want to edit your cronjob or add another cronjob, just run `crontab -e` in a terminal.
+
+---
+You should now be able to have your computer automatically run repetitive tasks for you! I'd love to hear what you have automated.

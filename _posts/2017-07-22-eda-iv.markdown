@@ -9,10 +9,10 @@ One basic yet often effective approach in exploratory data analysis I have not m
 - check the values &mdash; Are they numbers, characters, etc.? Do they make sense?
 
 To do this, pandas has two DataFrame/Series methods, `head` and `tail`, that allow you to see the first/last few rows (5 if not specified).
-If you want to look at a few rows at random, you can use the [`sample` method](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sample.html#pandas-dataframe-sample).
+If you want to look at a few rows at random, you can use the [`sample` method](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sample.html#pandas-dataframe-sample){:target="_blank"}.
 It may also be used when working with a large dataset: you can first use `sample` to generate a random subset, develop your code on that, then apply your code to the full dataset.
 
-There is also a method called [`info`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html#pandas-dataframe-info) that I absolutely adore.
+There is also a method called [`info`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html#pandas-dataframe-info){:target="_blank"} that I absolutely adore.
 Simply running `df.info()` gives you information on the DataFrame's shape, indices, column names, number of non-null values in each column, and the data types.
 Here is an example:
 

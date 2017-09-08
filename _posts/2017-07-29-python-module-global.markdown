@@ -13,7 +13,7 @@ __Note:__ Methods described here are applicable to UNIX systems (Mac or Linux).
 
 #### Step 1
 Save the function(s) in a `.py` file.
-This can be done using any text editors, such as [Atom](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwihqfHuu5TWAhXKh1QKHWDFDcwQFggoMAA&url=https%3A%2F%2Fatom.io%2F&usg=AFQjCNG9GpArx65u5sF0eKusBOg5u_9dtQ) or [gedit](https://wiki.gnome.org/Apps/Gedit); or IDEs, such as [Spyder](https://pythonhosted.org/spyder/installation.html) or [PyCharm](https://www.jetbrains.com/pycharm/).
+This can be done using any text editors, such as [Atom](https://atom.io/){:target="_blank"} or [gedit](https://wiki.gnome.org/Apps/Gedit){:target="_blank"}; or IDEs, such as [Spyder](https://pythonhosted.org/spyder/installation.html){:target="_blank"} or [PyCharm](https://www.jetbrains.com/pycharm/){:target="_blank"}.
 
 #### Step 2
 In the terminal, go to your home directory (`cd` and press "enter").
@@ -44,6 +44,6 @@ Now, to use the function(s) in your `.py` file(s), simply run `import <script>` 
 For example, I have my functions saved in `eda.py`, all I need to do is to add `import eda` or `from eda import *` to my Jupyter notebook.
 
 ### Other Methods
-If you are ready to package your script(s) and share it with the world, you can register it with [PyPI](https://pypi.python.org/pypi), which you (or anyone else) can `pip install` in the system (or a virtual environment), and then `import` it like you would any other Python libraries. You can find more details at the resources below:
-- [Packaging and Distributing Projects](https://packaging.python.org/tutorials/distributing-packages/)
-- [An interactive way to generate all the boilerplate you need for your package](https://github.com/wdm0006/cookiecutter-pipproject)
+If you are ready to package your script(s) and share it with the world, you can register it with [PyPI](https://pypi.python.org/pypi){:target="_blank"}, which you (or anyone else) can `pip install` in the system (or a virtual environment), and then `import` it like you would any other Python libraries. You can find more details at the resources below:
+- [Packaging and Distributing Projects](https://packaging.python.org/tutorials/distributing-packages/){:target="_blank"}
+- [An interactive way to generate all the boilerplate you need for your package](https://github.com/wdm0006/cookiecutter-pipproject){:target="_blank"}

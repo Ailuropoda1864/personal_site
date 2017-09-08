@@ -31,7 +31,7 @@ So it's a good practice to check for duplicate data as a routine.
 The following function computes the number of duplicate rows in a pandas DataFrame, and you can also choose to show the duplicate rows either sorted (more computationally expensive) or unsorted.
 <script src="https://gist.github.com/Ailuropoda1864/ebce8a34e838f0727b0e4a63e1a536e4.js"></script>
 
-Two more things about the [`duplicated`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.duplicated.html#pandas-dataframe-duplicated) method in pandas:
+Two more things about the [`duplicated`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.duplicated.html#pandas-dataframe-duplicated){:target="_blank"} method in pandas:
 - It does not consider the index, i.e., if two rows have exactly the same values across columns but have different indices, they will be marked as duplicate rows. So depending on how meaningful the indices are, the rows may or may not be true duplicates.
 
 - It has a `subset` argument, which allows you to specify column(s) to consider when identifying duplicates.
