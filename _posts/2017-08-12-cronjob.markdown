@@ -1,13 +1,13 @@
 ---
 layout: post
 category: Blog
-title: Scheduling Repetitive Tasks Using Crontab
+title: Schedule Repetitive Tasks Using Crontab
 description: step-by-step guide to set up a cronjob to run a python script
 ---
 As your data science tasks become more and more sophisticated, you may find yourself having to run scripts repeatedly at fixed intervals.
 For example, some projects require webscraping, or, as I described in a [previous blog post]({{ site.baseurl }}{% link _posts/2017-08-05-automate-git-pull.markdown %}), checking GitHub repos for updates.
 [Cron](https://en.wikipedia.org/wiki/Cron){:target="_blank"} is perfect for such purpose.
-I'll describe below how to use `crontab` in UNIX systems to schedule for a Python script to run periodically at fixed times.
+I'll describe below how to use `crontab` in UNIX systems (Linux or Mac) to schedule for a Python script to run periodically at fixed times.
 
 #### Step 1
 Set up a Python script as [described previously]({{ site.baseurl }}{% link _posts/2017-08-05-automate-git-pull.markdown %}).

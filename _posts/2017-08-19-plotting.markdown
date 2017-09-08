@@ -1,0 +1,34 @@
+---
+layout: post
+category: Blog
+title: Some Plotting Functions You May Find Handy
+description: tips on data visualization with code
+---
+In this blog I'll share a few plotting functions I regularly use.
+
+### Scatter Plot with Linear Fit
+
+<script src="https://gist.github.com/Ailuropoda1864/fad39099c62c6ab9c2efc606f5db554a.js"></script>
+
+I originally wrote this function to plot scatter plots of two variables plus a linearly fitted line.
+But later I realized `seaborn` already has [`regplot`](https://seaborn.pydata.org/generated/seaborn.regplot.html#seaborn.regplot){:target="_blank"} and [`lmplot`](https://seaborn.pydata.org/generated/seaborn.lmplot.html#seaborn.lmplot){:target="_blank"} that do the same thing but better.
+You can read more about them in [this tutorial](https://seaborn.pydata.org/tutorial/regression.html){:target="_blank"} (and learn not to re-invent the wheel!).
+I have repurposed it to visulaize model evaluation.
+When your `y` is a continous variable, you can plot the predicted `y` values on one axis, and the actual `y` values on another, and see how well they line up along `y=x`. To plot the `y=x` line, simply set `slope=1`, `y_intercept=0`.
+
+Here is an example:
+
+![example plot from scatter_plot_with_linear_fit](scatter_plot_with_linear_fit.png)
+
+
+### Correlation Heatmap
+
+<script src="https://gist.github.com/Ailuropoda1864/e2e62b19b6a0fd75048fa0c50eda6b69.js"></script>
+
+This is a wrapper function for `seaborn`'s [`heatmap`](https://seaborn.pydata.org/generated/seaborn.heatmap.html){:target="_blank"}. I use it to look at the correlations between variables in a pandas DataFrame, which is quite useful during exploratory data analysis.
+
+Here is an example:
+
+![example plot from corr_heatmap](corr_heatmap.png)
+
+When you see highly correlated variables, you have to be very careful if you are using a linear regression model (the LINE assumptions!). Plotting a heatmap is a quick way to check for that.
