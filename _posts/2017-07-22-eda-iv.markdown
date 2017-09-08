@@ -1,0 +1,35 @@
+---
+layout: post
+category: Blog
+title: Exploratory Data Analysis (IV)
+description: Exploratory data analysis (EDA) -- visually inspecting raw data
+---
+One basic yet often effective approach in exploratory data analysis I have not mentioned in my EDA series ([I]({{ site.baseurl }}{% link _posts/2017-07-01-eda-i.markdown %}), [II]({{ site.baseurl }}{% link _posts/2017-07-08-eda-ii.markdown %}), [III]({{ site.baseurl }}{% link _posts/2017-07-15-eda-iii.markdown %})) is visually inspecting the raw data:
+- check the column names (and understand what they mean)
+- check the values &mdash; Are they numbers, characters, etc.? Do they make sense?
+
+To do this, pandas has two DataFrame/Series methods, `head` and `tail`, that allow you to see the first/last few rows (5 if not specified).
+If you want to look at a few rows at random, you can use the [`sample` method](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.sample.html#pandas-dataframe-sample).
+It may also be used when working with a large dataset: you can first use `sample` to generate a random subset, develop your code on that, then apply your code to the full dataset.
+
+There is also a method called [`info`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.info.html#pandas-dataframe-info) that I absolutely adore.
+Simply running `df.info()` gives you information on the DataFrame's shape, indices, column names, number of non-null values in each column, and the data types.
+Here is an example:
+
+![Example output from the info method](info_output.png)
+
+__Note__: Do not confuse this with the `info` attribute (`df.info`).
+
+To wrap up the EDA series, here is the customized `eda` function I use whenever working on a new dateset:
+
+<script src="https://gist.github.com/Ailuropoda1864/5a067b50406534eb25ff268d4232efc8.js"></script>
+
+Note that I've made each part (`head`, `info`, `describe`, `dupicated`) modular so you can toggle anyone of them on or off.
+
+And here is an example of the output:
+
+![Example output from the eda function (page 1)](eda_output_1.png)
+
+![Example output from the eda function (page 2)](eda_output_2.png)
+
+That's it! Hope you've enjoyed the EDA series!

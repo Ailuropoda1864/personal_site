@@ -2,7 +2,7 @@
 layout: post
 category: Blog
 title: Exploratory Data Analysis (III)
-description: Exploratory data analysis (EDA) -- distributions of categorical data, visual inspection of raw data
+description: Exploratory data analysis (EDA) -- distributions of categorical data
 ---
 In the [first blog]({{ site.baseurl }}{% link _posts/2017-07-01-eda-i.markdown %}) of this series, I've talked about how to use the `describe` method in pandas to get a sense of the distributions of the data.
 While `describe` gives a pretty comprehensive summary on numeric data, the same thing cannot be said about categorical data.
