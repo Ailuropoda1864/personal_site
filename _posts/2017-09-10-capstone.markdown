@@ -48,7 +48,7 @@ I came to the understanding that a key difference between a dynamic topic model 
 This helped me settle on using the [dynamic topic model software](https://github.com/blei-lab/dtm){:target="_blank"} developed by Blei et al. for this project.
 
 The rest was to follow the instruction/examples provided by the software to prepare the input files, run the models, and process the output.
-I soon came to the realization that within the project timeframe, I would not be able to analyze the whole dataset.
+I soon came to the realization that due to the heavy computation needed, I would not be able to analyze the whole dataset within the project timeframe.
 So instead I selected two subsets (articles from two different journals) as a proof of concept.
 
 ### Interpretation of Results
@@ -66,4 +66,4 @@ I got to practice using the machine learning tools we learned at GA, learn a few
 I also got a taste of working with a large amount of data and doing computation on the cloud.
 All the hard work I put in was worth it!
 
-Thank you for reading. Please check out my [GitHub repo](https://github.com/Ailuropoda1864/PMC-text-mining) if you're curious for more detail!
+Thank you for reading. Please check out my [GitHub repo](https://github.com/Ailuropoda1864/PMC-text-mining) if you're curious about the detail!
