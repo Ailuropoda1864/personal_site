@@ -60,10 +60,11 @@ For example, in the "infectious disease" topic in _The Journal of Experimental M
 
 ![Trends of key terms in "infectious disease" over time](https://github.com/Ailuropoda1864/PMC-text-mining/raw/master/visualization/infectious_disease_trends.png)
 
-### In Conclusion
+### Closing Thoughts
 I have learned a lot during this project.
 I got to practice using the machine learning tools we learned at GA, learn a few new ones (topic modeling, for example), and once again confirm the importance of reading new materials (be it research articles or programming documentations) and learning by doing.
 I also got a taste of working with a large amount of data and doing computation on the cloud.
-All the hard work I put in was worth it!
+In the end, all the hard work I put in was worth it!
 
-Thank you for reading. Please check out my [GitHub repo](https://github.com/Ailuropoda1864/PMC-text-mining) if you're curious about the detail!
+---
+Thank you for reading. Please head over to my [GitHub repo](https://github.com/Ailuropoda1864/PMC-text-mining) if you want more!
