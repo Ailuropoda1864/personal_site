@@ -1,0 +1,69 @@
+---
+layout: post
+category: Blog
+title: Topic Evolution in Life Sciences Research
+description: Thought process on my capstone project for the Data Science Immersive program at General Assembly, in which I sought to use the text from biomedical and life science literature to gain insights on research topic trends over time.
+---
+In this blog, I will talk about my thought process during my capstone project for the [Data Science Immersive program at General Assembly (GA)](https://generalassemb.ly/education/data-science-immersive?where=washington-dc){:target="_blank"}.
+In my [GitHub repo](https://github.com/Ailuropoda1864/PMC-text-mining), I have provided the write-up, the presentation slides, the actual code, some data visualization, and the references.
+You are welcome to check it out if you want more detail.
+
+### Settling on a Project
+From previous experiences in the life sciences field, I know that [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/){:target="_blank"} provides tons of open-access data/content.
+After learning some Natural Language Processing (NLP) techniques at GA, I know I'd like to use them on what I'm already familiar with (life sciences journal literature).
+In particular, topic modeling sounded really intriguing.
+I was hoping I could use this technique to gain insights on life sciences research topic trends over time.
+
+The idea was firmed up when we had Dr. Evann Smith as a guest lecturer on [modeling text data](https://github.com/evanngsmith/GA){:target="_blank"}.
+I got to chat with her after the lecture about my capstone idea, and she pointed me to [David Blei](http://www.cs.columbia.edu/~blei/){:target="_blank"}, a researcher who has done work on this particular subject and has built some tools for others to use.
+
+### Getting the Data
+After a little digging, I was happy to find that PubMed Central has made some [text mining collections](https://www.ncbi.nlm.nih.gov/pmc/tools/textmining/){:target="_blank"} available for bulk download.
+So getting the raw data was easy (though it did take a whole afternoon to download 47 GB of zipped files).
+The articles are provided as `.txt` as well as `.nxml`.
+The former only contain the text of the articles, while the latter also contain metadata.
+So I went with the latter.
+
+I used the [`lxml`](http://lxml.de/){:target="_blank"} library to extract the content from the `.nxml` files.
+ This process is fairly similar to extracting information from websites (HTML files) using BeautifulSoup.
+ I figured out the xpaths to the particular metadata/text I wanted to extract (e.g., publication time, journal title, article title, abstract, etc.), cleaned up the HTML tags when necessary, and wrote the extracted information to a `.csv` file, which could be read with pandas later.
+ This resulted in a 2.7 GB file!
+
+### Exploratory Data Analysis and Data Cleaning
+In the [PMC Open Access Subset](https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/){:target="_blank"}, there are over 1.6 million articles from over 8,000 journals going all the way back to 1848.
+As you can see, there is indeed a wealth of information, and I was excited to dive in!
+
+![Publication Explosion in the 21st Century](https://github.com/Ailuropoda1864/PMC-text-mining/raw/master/visualization/publication_explosion.png)
+
+Upon examining missing data, I dropped the metadata columns with too many missing values (and not essential to modeling that followed).
+I also dropped the articles with neither title nor abstract information; most of these are not primary research articles, which means they are not essential to my analysis.
+
+### Modeling
+Now was the hard part.
+Topic modeling was introduced to us in Evann's guest lecture, but we hadn't really practiced in labs or projects thus far.
+How should I move forward?
+
+I invested a day or two searching for and reading papers (including this pretty easy-to-read [review](http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf){:target="_blank"} on topic modeling, and a more specialized paper on [dynamic topic modeling](http://www.cs.columbia.edu/~blei/papers/BleiLafferty2006a.pdf){:target="_blank"}) and software/library documentations.
+I came to the understanding that a key difference between a dynamic topic model and a simple latent Dirichlet allocation (LDA) model is that the latter assumes the order of documents does not matter and all the documents share the same topics, while the former assumes the topics change over time.
+This helped me settle on using the [dynamic topic model software](https://github.com/blei-lab/dtm){:target="_blank"} developed by Blei et al. for this project.
+
+The rest was to follow the instruction/examples provided by the software to prepare the input files, run the models, and process the output.
+I soon came to the realization that within the project timeframe, I would not be able to analyze the whole dataset.
+So instead I selected two subsets (articles from two different journals) as a proof of concept.
+
+### Interpretation of Results
+The results were nothing short of exciting.
+The topics "picked up" by the models were pretty well separated, fairly easy to summarize (and give names to), and appeared to be comprehensive high-level lists of research topics in the respective fields covered by the journals.
+
+A closer took at the key terms in some of these topics revealed some interesting (although maybe not so surprising) trends in research.
+For example, in the "infectious disease" topic in _The Journal of Experimental Medicine_, the term "pneumococcus" has been on decline since 1910s, presumably because the treatment for diseases caused by pneumococcus (pneumonia) had become well-established; "influenza" has remained more or less constant, which also make sense because people are still concerned about the flu; 'hiv' had a sharp increase in the late 1980s but has been on a slight decline in recent years.
+
+![Trends of key terms in "infectious disease" over time](https://github.com/Ailuropoda1864/PMC-text-mining/raw/master/visualization/infectious_disease_trends.png)
+
+### In Conclusion
+I have learned a lot during this project.
+I got to practice using the machine learning tools we learned at GA, learn a few new ones (topic modeling, for example), and once again confirm the importance of reading new materials (be it research articles or programming documentations) and learning by doing.
+I also got a taste of working with a large amount of data and doing computation on the cloud.
+All the hard work I put in was worth it!
+
+Thank you for reading. Please check out my [GitHub repo](https://github.com/Ailuropoda1864/PMC-text-mining) if you're curious for more detail!

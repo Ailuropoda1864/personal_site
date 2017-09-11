@@ -13,7 +13,7 @@ In this blog I'll share a few plotting functions I regularly use.
 I originally wrote this function to plot scatter plots of two variables plus a linearly fitted line.
 But later I realized `seaborn` already has [`regplot`](https://seaborn.pydata.org/generated/seaborn.regplot.html#seaborn.regplot){:target="_blank"} and [`lmplot`](https://seaborn.pydata.org/generated/seaborn.lmplot.html#seaborn.lmplot){:target="_blank"} that do the same thing but better.
 You can read more about them in [this tutorial](https://seaborn.pydata.org/tutorial/regression.html){:target="_blank"} (and learn not to re-invent the wheel!).
-I have repurposed it to visulaize model evaluation.
+I have repurposed it to visualize model evaluation.
 When your `y` is a continous variable, you can plot the predicted `y` values on one axis, and the actual `y` values on another, and see how well they line up along `y=x`. To plot the `y=x` line, simply set `slope=1`, `y_intercept=0`.
 
 Here is an example:

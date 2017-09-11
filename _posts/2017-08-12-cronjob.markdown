@@ -6,7 +6,7 @@ description: step-by-step guide to set up a cronjob to run a python script
 ---
 As your data science tasks become more and more sophisticated, you may find yourself having to run scripts repeatedly at fixed intervals.
 For example, some projects require webscraping, or, as I described in a [previous blog post]({{ site.baseurl }}{% link _posts/2017-08-05-automate-git-pull.markdown %}), checking GitHub repos for updates.
-[Cron](https://en.wikipedia.org/wiki/Cron){:target="_blank"} is perfect for such purpose.
+[Cron](https://en.wikipedia.org/wiki/Cron){:target="_blank"} is perfect for such purposes.
 I'll describe below how to use `crontab` in UNIX systems (Linux or Mac) to schedule for a Python script to run periodically at fixed times.
 
 #### Step 1
@@ -72,11 +72,12 @@ The first 5 values (seperated by space) specify the time to run the commands, wh
 The 6th value is the command to run.
 Use `;` as if you would press 'enter' in a terminal.
 In my example command, I first change the directory to where my script is (`cd /home/fay/code/data_science_general`).
-Then I call the script (`./auto_git_pull.py`). Finally, with `>> cron_git_log.txt 2>&1`, I redirect any output or error message to a log file named `cron_git_log.txt`. It is generally a good practice to keep a log for debugging purpose.
+Then I call the script (`./auto_git_pull.py`). Finally, with `>> cron_git_log.txt 2>&1`, I redirect any output or error message to a log file named `cron_git_log.txt`. It is generally a good practice to keep a log for debugging.
 
 #### Step 5
 After you edit crontab, press `Control` + `X` to exit the nano editor. You will be asked if you want to save the changes.
-Anytime you want to edit your cronjob or add another cronjob, just run `crontab -e` in a terminal.
+
+Anytime you want to edit your existing cronjob or add another cronjob, simply run `crontab -e` in a terminal.
 
 ---
 You should now be able to have your computer automatically run repetitive tasks for you! I'd love to hear what you have automated.
