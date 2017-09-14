@@ -190,3 +190,9 @@ p.copyright {
 .img-responsive {
     max-height: 100%;
 }
+
+#post p > img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
