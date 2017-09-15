@@ -4,7 +4,7 @@ category: Blog
 title: Save Your Work as You Go
 description: some tips on saving data as you go
 ---
-When you run code that may take a while, for example, webscraping, or extracting text from many xml files, you may want to write the output to the disk as you go for various reasons. One is to release momery, since you are not storing everything in memory; the other one is to prevent losing all the work in case there is a power outage, internet outage, or an error is thrown on your code.
+When you run code that may take a while, for example, webscraping, or extracting text from many xml files, you may want to write the output to the disk as you go for various reasons. One is to release memory, since you are not storing everything in memory; the other one is to prevent losing all the work in case there is a power outage, internet outage, or an error is thrown on your code.
 
 The code is very simple, but it's the mentality of saving work as you go that counts.
 
