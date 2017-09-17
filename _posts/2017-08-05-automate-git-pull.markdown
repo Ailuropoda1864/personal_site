@@ -1,12 +1,12 @@
 ---
 layout: post
 category: Blog
-title: Programatically Check for Updates in GitHub Repos
+title: Programmatically Check for Updates in GitHub Repos
 description: I wrote a script to automatically check for updates in GA repos, for example, solution code posted.
 ---
 During the Data Science Immersive (DSI) program in General Assembly (Washington, DC), we usually have a GitHub Enterprise repo for each lecture, which we are asked to fork and clone to our own computers.
 Periodically, the instructors would post updates after we clone a repo, such as solution code for labs, or updated code-alongs after a lecture.
-Checking for these updates can be tediously, especially when we don't know exactly when a certain repo has been updated (and it doesn't help my OCD).
+Checking for these updates can be tedious, especially when we don't know exactly when a certain repo has been updated (and it doesn't help my OCD).
 So I wrote a script to automate that.
 I've tested and debugged the script pretty extensively during the DSI program.
 Unfortunately, by the time I have worked out all the kinks, the repos aren't updated that much anymore.

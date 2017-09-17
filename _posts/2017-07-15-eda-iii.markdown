@@ -16,7 +16,7 @@ Here is what it looks like when used on the same DataFrame used in the [first bl
 ![Example output from the category_counts function](category_counts.png)
 
 As a side note, checking value counts is especially important when you are dealing with a classification problem.
-Remember to check the value counts of the outcome variable, as well as the ratio (`y.value_counts() / len(y)` will do; or `y.value_counts() / float(len(y))` if you're still using Python 2 &mdash; but seriously, switch to Python 3 already!).
+Remember to check the value counts of the outcome variable, as well as the ratio (`y.value_counts() / len(y)`; or `y.value_counts() / float(len(y))` if you're still using Python 2 &mdash; but seriously, switch to Python 3 already!).
 This way, you'll know if you're dealing with unbalanced classes, and the baseline of your accuracy score.
 
 That's it for today. I'll wrap up the EDA series in my next blog post.

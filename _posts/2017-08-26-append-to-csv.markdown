@@ -10,7 +10,7 @@ The code is very simple, but it's the mentality of saving work as you go that co
 
 <script src="https://gist.github.com/Ailuropoda1864/2cf0823ac30b6963479b6a4fbf14068f.js"></script>
 
-Open a file in "append" mode (`'a'`) will create a new file if the file doesn't already exist. For example:
+Opening a file in "append" mode (`open(file, 'a'`) will create a new file if the file doesn't already exist. For example:
 
 ![example plot from append_to_csv](append_to_csv.png)
 

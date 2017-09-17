@@ -20,7 +20,7 @@ Here is an example:
 
 __Note__: Do not confuse this with the `info` attribute (`df.info`).
 
-To wrap up the EDA series, here is the customized `eda` function I use whenever working on a new dateset:
+To wrap up the EDA series, here is the customized `eda` function I use whenever working on a new dataset:
 
 <script src="https://gist.github.com/Ailuropoda1864/5a067b50406534eb25ff268d4232efc8.js"></script>
 

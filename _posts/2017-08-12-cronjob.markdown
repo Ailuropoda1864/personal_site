@@ -28,7 +28,7 @@ So my shebang line is:
 `#!/home/fay/anaconda2/envs/py36/bin/python`
 
 
-Note: Read more about managing virtual enviroments with `conda` [here](https://conda.io/docs/user-guide/tasks/manage-environments.html#managing-environments){:target="_blank"}.
+Note: Read more about managing virtual environments with `conda` [here](https://conda.io/docs/user-guide/tasks/manage-environments.html#managing-environments){:target="_blank"}.
 
 
 If you just want to use the system python, you can find out where it is by typing `which python` in a terminal:
@@ -67,7 +67,7 @@ I'll explain what it is going on using
 
 as an example.
 
-The first 5 values (seperated by space) specify the time to run the commands, which is already described in the commented-out lines near the top of the screen. Note that I use `2,4,6` for day of week (dow), meaning that I want to run the commands every Tuesday, Thursday, and Saturday.
+The first 5 values (separated by space) specify the time to run the commands, which is already described in the commented-out lines near the top of the screen. Note that I use `2,4,6` for day of week (dow), meaning that I want to run the commands every Tuesday, Thursday, and Saturday.
 
 The 6th value is the command to run.
 Use `;` as if you would press 'enter' in a terminal.
