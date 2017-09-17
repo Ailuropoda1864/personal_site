@@ -24,7 +24,7 @@ To wrap up the EDA series, here is the customized `eda` function I use whenever 
 
 <script src="https://gist.github.com/Ailuropoda1864/5a067b50406534eb25ff268d4232efc8.js"></script>
 
-Note that I've made each part (`head`, `info`, `describe`, `dupicated`) modular so you can toggle anyone of them on or off.
+Note that I've made each part (`head`, `info`, `describe`, `duplicated`) modular so you can toggle anyone of them on or off.
 
 And here is an example of the output:
 
