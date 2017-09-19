@@ -15,8 +15,11 @@
         {% if page.layout == 'homepage' %}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
                 {% for service in page.services %}
-            	<li>
+            	  <li>
                     <a class="page-scroll" href="#{{ service.id }}">{{ service.keyword }}</a>
                 </li>
                 {% endfor %}
