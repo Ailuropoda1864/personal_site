@@ -5,8 +5,8 @@ title: Programmatically Check for Updates in GitHub Repos
 description: I wrote a script to automatically check for updates in GA repos, for example, solution code posted.
 ---
 During the Data Science Immersive (DSI) program in General Assembly (Washington, DC), we usually have a GitHub Enterprise repo for each lecture, which we are asked to fork and clone to our own computers.
-Periodically, the instructors would post updates after we clone a repo, such as solution code for labs, or updated code-alongs after a lecture.
-Checking for these updates can be tedious, especially when we don't know exactly when a certain repo has been updated (and it doesn't help my OCD).
+Periodically, the instructors would post updates after we clone a repo, such as solution code for labs, or updated code-alongs after lectures.
+Checking for these updates can be tedious, especially when we don't know exactly when a certain repo would be updated (and it doesn't help my OCD).
 So I wrote a script to automate that.
 I've tested and debugged the script pretty extensively during the DSI program.
 Unfortunately, by the time I have worked out all the kinks, the repos aren't updated that much anymore.
@@ -25,5 +25,18 @@ This is a common format of a Python script.
 It ensures the `main` function will only be called when the script is directly run (vs. importing the functions in it by `import auto_git_pull`).
 Read more [here](https://stackoverflow.com/questions/419163/what-does-if-name-main-do){:target="_blank"}.
 
-You can either use an IDE to run the script, or run `python <path to script>` in a terminal.
+You can either use an IDE (e.g. [Spyder](https://pythonhosted.org/spyder/installation.html){:target="_blank"}, [PyCharm](https://www.jetbrains.com/pycharm/){:target="_blank"}) to run the script, or run `python <path to script>` in a terminal.
+You may receive certain error messages.
+Here are some ways to troubleshoot:
+- "Error occurred during merge."
+  - This usually means there were conflicts when git was trying to merge your local branch with the remote upstream branch.
+In a terminal, `cd` into the directory where the error occurred.
+Then enter `git status`; it would tell you what the conflicts are, and give you instructions.
+Follow the instructions; you'd need to manually solve the conflicts and continue with the merge.
+Anytime you're not sure how to proceed, run `git status` again and see what it says.
+- "... does not have remote upstream."
+  - This means your public GitHub repo (non-Enterprise) does not have a remote upstream. If you forked this repo from someone else, go back to the original repo from which you forked, and copy the "Clone or download" path (again, choose SSH, __not__ HTTPS). Then, in a terminal, `cd` into the repo, and enter `git remote add upstream <copied path>`.
+
+If you run into errors not described above, feel free to [shoot me a message](https://docs.google.com/forms/d/e/1FAIpQLSeORqtyVnOE6XKKdiSApBe_hCAolf8a539jcJwBm98uy1fnDA/viewform?usp=sf_link){:target="_blank"}.
+
 I'll describe how to set up a cronjob to run the script periodically in [another blog post]({{ site.baseurl }}{% link _posts/2017-08-12-cronjob.markdown %}). Stay tuned!
