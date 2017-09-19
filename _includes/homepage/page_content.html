@@ -1,6 +1,30 @@
+<section id="about">
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">{{ page.about_heading }}</h2>
+                    <div class="lead">{{ content }}</div>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <div class="img-container">
+                        <img class="img-responsive" src="img/homepage/{{ page.img }}" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+</section>
 {% for service in page.services %}
   {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-    {% if thecycle == 'even' %}
+    {% if thecycle == 'odd' %}
     <section id="{{ service.id }}">
         <div class="content-section-a">
 
@@ -15,7 +39,7 @@
                         {% else %}
                         <h2 class="section-heading">{{ service.title }}</h2>
                         {% endif %}
-                        <div class="lead">{{ service.content | markdownify }}</div>
+                        <div class="lead">{{ service.content }}</div>
                     </div>
                     <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                         <div class="img-container">
