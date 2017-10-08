@@ -19,9 +19,9 @@ To better explain the logic flow of my script, I have made a flow chart:
 ![flow chart](activity_diagram.png)
 
 ### Usage Notes
+- You __MUST__ fill in a few variables in the script. They are in lines 6 through 23 in the code below; I have written instructions and given examples in the comments. When you fill in the GitHub repo patterns, use the SSH (beginning with `git@...`), __not__ HTTPS (beginning with `https://...`). This way, you won't be prompted for username and password every time (which my script isn't able to handle).
 - You can either use an IDE (e.g. [Spyder](https://pythonhosted.org/spyder/installation.html){:target="_blank"}, [PyCharm](https://www.jetbrains.com/pycharm/){:target="_blank"}) to run the script, or run `python <path to script>` in a terminal.
 - I've only tested the script with Python 3, and some of the functions I use from the  [`subprocess`](https://docs.python.org/3/library/subprocess.html){:target="_blank"} library may be new in Python 3, so it may or may not be Python 2 compatible. If you're using Python 2 (_but why?_), test it out. If you run into errors, create a virtual environment that runs Python 3 following [these instructions](https://conda.io/docs/user-guide/tasks/manage-python.html#installing-a-different-version-of-python){:target="_blank"}.
-- You __MUST__ fill in a few variables in the script. They are in lines 6 through 23 in the code below; I have written instructions and given examples in the comments. When you fill in the GitHub repo patterns, use the SSH (beginning with `git@...`), __not__ HTTPS (beginning with `https://...`). This way, you won't be prompted for username and password every time (which my script isn't able to handle).
 - You may notice that in the script, I first define a `main` function (lines 26-55) and then use a conditional to call it at the end (lines 120-121). This is a common format of a Python script. It ensures the `main` function will only be called when the script is directly run (vs. importing the functions in it by `import auto_git_pull`). Read more [here](https://stackoverflow.com/questions/419163/what-does-if-name-main-do){:target="_blank"}.
 
 
